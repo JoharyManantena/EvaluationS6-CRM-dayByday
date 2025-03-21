@@ -178,8 +178,11 @@
                 <i class="icon ion-md-arrow-dropup arrow-side sidebar-arrow"></i>
             </a>
             <div class="collapse" id="data-management">
-                <span class="list-group-item childlist" style="color: white;"> <i class="bullet-point"><span></span></i> {{ __('Importer') }}</span>
+                <a href="{{ route('import_csv') }}" class="list-group-item childlist" style="color: white;">
+                    <i class="bullet-point"><span></span></i> {{ __('Importer') }}
+                </a>
             </div>
+            
             
 
             

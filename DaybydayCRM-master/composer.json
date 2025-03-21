@@ -19,6 +19,7 @@
     "require": {
         "php": ">=7.3.9",
         "aws/aws-sdk-php": "^3.112",
+        "doctrine/dbal": "^3.9",
         "elasticsearch/elasticsearch": "^6.1",
         "google/apiclient": "^2.2",
         "guzzlehttp/guzzle": "^6.3",
