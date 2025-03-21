@@ -172,6 +172,17 @@
                                 class="bullet-point"><span></span></i> {{ __('Integrations') }}</a>
                 </div>
             @endif
+
+            <a href="#data-management" class="list-group-item" data-toggle="collapse" data-parent="#MainMenu">
+                <i class="fa fa-database sidebar-icon"></i><span id="menu-txt">{{ __('Data Management') }}</span>
+                <i class="icon ion-md-arrow-dropup arrow-side sidebar-arrow"></i>
+            </a>
+            <div class="collapse" id="data-management">
+                <span class="list-group-item childlist" style="color: white;"> <i class="bullet-point"><span></span></i> {{ __('Importer') }}</span>
+            </div>
+            
+
+            
         </div>
     </nav>
 
