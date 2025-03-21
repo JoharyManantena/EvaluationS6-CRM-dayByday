@@ -1,4 +1,9 @@
 <?php
+
+use App\Http\Controllers\ResetController;
+use App\Http\Controllers\ImportCsvController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +23,16 @@ Route::group(['middleware' => ['auth']], function () {
      */
     Route::get('/', 'PagesController@dashboard');
     Route::get('dashboard', 'PagesController@dashboard')->name('dashboard');
+
+    Route::get('/reset', [ResetController::class, 'showResetForm'])->name('reset.form');
+    Route::post('/reset', [ResetController::class, 'resetDatabase'])->name('reset.database');  
+    
+    /**
+     * Import CSV
+     */
+    Route::get('/import-csv', [ImportCsvController::class, 'showForm'])->name('import_csv.form');
+    Route::post('/import-csv', [ImportCsvController::class, 'import'])->name('import_csv');
+
 
     /**
      * Users
