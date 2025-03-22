@@ -39,9 +39,16 @@ Route::group(['middleware' => ['auth']], function () {
      * Payments Routes
      */
 
-    // Utilisation de l'external_id comme identifiant
+    // Sélection du client
+    Route::get('/payments/select-client', [PaymentsController::class, 'selectClient'])->name('payments.selectClient');
+
+    // Sélection des factures d'un client donné
+    Route::get('/payments/select-invoice/{client}', [PaymentsController::class, 'selectInvoice'])->name('payments.selectInvoice');
+
+    // Utilisation de l'external_id pour le formulaire de paiement
     Route::get('/invoice/{invoice:external_id}/payment', [PaymentsController::class, 'showPaymentForm'])->name('payments.form');
     Route::post('/invoice/{invoice:external_id}/payment', [PaymentsController::class, 'addPayment'])->name('payments.add');
+
 
 
     /**

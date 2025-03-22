@@ -120,12 +120,16 @@
                 <i class="icon ion-md-arrow-dropup arrow-side sidebar-arrow"></i></a>
 
             <div class="collapse" id="sales">
-            <a href="{{ route('invoices.overdue')}}" class="list-group-item childlist"> 
-                <i class="bullet-point"><span></span></i> {{ __('Overdue') }}
-            </a>
-            <a href="{{ route('products.index')}}" class="list-group-item childlist"> 
-                <i class="bullet-point"><span></span></i> {{ __('Products') }}
-            </a>           
+                <a href="{{ route('invoices.overdue')}}" class="list-group-item childlist"> 
+                    <i class="bullet-point"><span></span></i> {{ __('Overdue') }}
+                </a>
+                <a href="{{ route('products.index')}}" class="list-group-item childlist"> 
+                    <i class="bullet-point"><span></span></i> {{ __('Products') }}
+                </a>
+                
+                <a href="{{ route('payments.selectClient') }}" class="list-group-item childlist"> 
+                    <i class="bullet-point"><span></span></i> {{ __('Payment Facture') }}
+                </a>
             </div>
 
             @if(Entrust::can('calendar-view'))
