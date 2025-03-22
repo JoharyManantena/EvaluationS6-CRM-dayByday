@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\ImportCsvController;
+use App\Http\Controllers\PaymentsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,15 @@ Route::group(['middleware' => ['auth']], function () {
      */
     Route::get('/import-csv', [ImportCsvController::class, 'showForm'])->name('import_csv.form');
     Route::post('/import-csv', [ImportCsvController::class, 'import'])->name('import_csv');
+
+
+    /**
+     * Payments Routes
+     */
+
+    // Utilisation de l'external_id comme identifiant
+    Route::get('/invoice/{invoice:external_id}/payment', [PaymentsController::class, 'showPaymentForm'])->name('payments.form');
+    Route::post('/invoice/{invoice:external_id}/payment', [PaymentsController::class, 'addPayment'])->name('payments.add');
 
 
     /**
